@@ -177,3 +177,10 @@ footer {
   color: #f7f7f7;
 }
 /* END Footer */
+h2 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+p {
+  margin-bottom: 10px;
+}
