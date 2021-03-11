@@ -4,7 +4,7 @@ mapboxgl.accessToken =
 const initMap = () => {
   return new mapboxgl.Map({
     container: "map",
-    style: "mapbox://styles/mapbox/light-v10",
+    style: "mapbox://styles/mapbox/dark-v10",
     center: [-75.2273, 40.071],
     bounds: [
       [-76.09405517578125, 39.49211914385648],
@@ -53,6 +53,15 @@ const makeMap = () => {
   const control = makeRegionalExtentControl(map);
 
   map.addControl(control);
+
+  var draw = new MapboxDraw({
+    displayControlsDefault: false,
+    controls: {
+      polygon: true,
+      trash: true,
+    },
+  });
+  map.addControl(draw);
 
   return map;
 };
