@@ -1,0 +1,23 @@
+{
+  "name": "lts-webmap",
+  "version": "1.0.0",
+  "description": "Webmap for LTS analysis",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "lite-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aaronfraint/lts-webmap.git"
+  },
+  "author": "Aaron Fraint, AICP",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aaronfraint/lts-webmap/issues"
+  },
+  "homepage": "https://github.com/aaronfraint/lts-webmap#readme",
+  "devDependencies": {
+    "lite-server": "^2.6.1"
+  }
+}
