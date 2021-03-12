@@ -5,7 +5,7 @@ const sources = {
   },
   lts_tool: {
     type: "vector",
-    url: "http://157.230.82.238:8080/data/test-case.json",
+    url: "https://www.where-on-earth-is.com/data/lts_tool.json",
   },
 };
 
