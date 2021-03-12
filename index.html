@@ -81,40 +81,15 @@
     </nav>
 
     <main id="main-content-wrapper" class="flex-row flex-between">
+      <div id="map"></div>
+
       <article id="sidebar">
         <div id="sidebar-content">
           <h1>This is a prototype / proof of concept!</h1>
           <br />
           <hr />
-          <br />
-          <h2>About</h2>
-          <p>
-            This map is hosted on
-            <a href="https://pages.github.com">GitHub Pages</a>
-            (free!), uses
-            <a href="https://www.mapbox.com/mapbox-gljs">MapboxGL.js</a>
-            to render the map, and
-            <a href="https://turfjs.org">turf.js</a>
-            to perform client-side geospatial operations. In addition, it uses
-            three unique services hosted on
-            <a href="https://www.digitalocean.com">Digital Ocean</a>
-            ($$$):
-          </p>
-          <ul>
-            <li>
-              <a href="http://157.230.82.238:8080">Vector tiles</a>
-              hosted via Tileserver GL and Docker ($5/month)
-            </li>
-            <li>
-              <a href="https://lts-fastapi-c8pjh.ondigitalocean.app/docs"
-                >an API written in Python with FastAPI</a
-              >
-              ($5/month)
-            </li>
-            <li>data stored in a PostgreSQL database ($15/month)</li>
-          </ul>
-          <br />
-          <p>It shows:</p>
+
+          <h2>Legend</h2>
           <ul>
             <li>Dashed lines for high-stress (Bike LTS 3 or 4) roadways</li>
             <li>
@@ -122,39 +97,69 @@
               connectivity
             </li>
           </ul>
-          <br />
+
           <h2>Usage</h2>
           <ul>
             <li>Zoom in to an area of interest</li>
             <li>
-              Click the rectangle icon on the right side of the map to enable
-              drawing
+              Click the rectangle icon at the top-right corner of the map to
+              enable drawing
             </li>
             <li>
               Click on the map to draw a polygon around stretch of roadway
             </li>
             <li>Double-click your last point to finish the drawing</li>
+            <li>The map will then perform the following actions:</li>
+            <ol>
+              <li>Select the LTS 3 and 4 segments within your polygon</li>
+              <li>
+                Query the API with the selected IDs to find low-stress islands
+                that intersect the selected segments
+              </li>
+              <li>
+                Refresh the map display, showing the selected segments in cyan
+                and the merged islands with a yellow underline
+              </li>
+            </ol>
           </ul>
           <br />
-          <p>The map will then perform the following actions:</p>
-          <ol>
+          <hr />
+          <h2>Front-end: GitHub Pages</h2>
+          <ul>
             <li>
-              Use turf.js to select the LTS 3 and 4 segments within your polygon
+              <a href="https://www.mapbox.com/mapbox-gljs">MapboxGL.js</a> is
+              used to render the map
             </li>
             <li>
-              Query the Python API with the ID values of the selected segments,
-              which subsequently queries the PostgreSQL database to find
-              low-stress islands that intersect the selected segments
+              <a href="https://turfjs.org">turf.js</a> is used to perform
+              client-side geoprocessing
+            </li>
+          </ul>
+          <h2>Back-end: Digital Ocean</h2>
+          <ul>
+            <li>
+              <a href="https://where-on-earth-is.com" target="_blank"
+                >Vector tile</a
+              >
+              data is hosted using
+              <a href="https://github.com/maptiler/tileserver-gl"
+                >TileServer GL</a
+              >
             </li>
             <li>
-              Refresh the map display, showing the selected segments in cyan and
-              the merged islands with a yellow underline
+              An
+              <a
+                href="https://lts-fastapi-c8pjh.ondigitalocean.app/docs"
+                target="_blank"
+                >API</a
+              >
+              was written in Python with FastAPI
             </li>
-          </ol>
+            <li>Data is stored in a PostgreSQL database</li>
+          </ul>
+          <br />
         </div>
       </article>
-
-      <div id="map"></div>
     </main>
 
     <div id="modal" role="dialog">
@@ -166,7 +171,9 @@
       </div>
     </div>
 
-    <footer class="flex-row flex-around">footer</footer>
+    <footer class="flex-row flex-around">
+      Aaron Fraint, AICP | DVRPC | Office of Mobility Analysis & Design
+    </footer>
 
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.0.1/mapbox-gl.js"></script>
   </body>

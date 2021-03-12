@@ -39,7 +39,7 @@ const layers = {
     paint: {
       "line-width": 20,
       "line-color": "yellow",
-      "line-opacity": 0.8,
+      "line-opacity": 0.7,
     },
     filter: ["in", "island_id", ""],
   },
@@ -79,10 +79,30 @@ const layers = {
 };
 
 const paint_props = {
+  islandsHighlighted: {
+    id: "islands-highlighted",
+    prop: "line-width",
+    style: ["interpolate", ["exponential", 0.5], ["zoom"], 10, 4, 12, 15],
+  },
+  islandsSelected: {
+    id: "islands-selected",
+    prop: "line-width",
+    style: ["interpolate", ["exponential", 0.5], ["zoom"], 10, 2, 15, 5],
+  },
+  linksHighlighted: {
+    id: "links-highlighted",
+    prop: "line-width",
+    style: ["interpolate", ["exponential", 0.5], ["zoom"], 10, 4, 12, 10],
+  },
   islands: {
     id: "islands",
     prop: "line-width",
-    style: ["interpolate", ["exponential", 0.5], ["zoom"], 10, 0.75, 17, 4],
+    style: ["interpolate", ["exponential", 0.5], ["zoom"], 10, 0.2, 15, 2],
+  },
+  links: {
+    id: "links",
+    prop: "line-width",
+    style: ["interpolate", ["exponential", 0.5], ["zoom"], 10, 0.1, 15, 1],
   },
 };
 

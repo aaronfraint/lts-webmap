@@ -52,7 +52,7 @@ const makeMap = () => {
   const map = initMap();
   const control = makeRegionalExtentControl(map);
 
-  map.addControl(control);
+  map.addControl(control, "top-left");
 
   var draw = new MapboxDraw({
     displayControlsDefault: false,
