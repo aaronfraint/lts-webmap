@@ -8,7 +8,7 @@ const TerserPlugin = require("terser-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = {
-  mode: "development",
+  mode: "production",
 
   entry: {
     main: path.resolve(__dirname, "./src/index.js"),
@@ -34,20 +34,6 @@ module.exports = {
       },
     }),
     new CleanWebpackPlugin(),
-    // new CopyWebpackPlugin({
-    //   patterns: [
-    //     {
-    //       from: "./img",
-    //       to: "./dist/img",
-    //       toType: "dir",
-    //     },
-    //     {
-    //       from: "./css",
-    //       to: "./dist/css",
-    //       toType: "dir",
-    //     },
-    //   ],
-    // }),
     new webpack.HotModuleReplacementPlugin(),
     new MiniCssExtractPlugin(),
   ],
@@ -74,12 +60,12 @@ module.exports = {
         test: /\.vue$/,
         loader: "vue-loader",
       },
-      {
-        test: /\.(jpg|png)$/,
-        use: {
-          loader: "url-loader",
-        },
-      },
+      // {
+      //   test: /\.(jpg|png)$/,
+      //   use: {
+      //     loader: "url-loader",
+      //   },
+      // },
       {
         test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
         type: "asset/resource",
