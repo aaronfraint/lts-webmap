@@ -6,6 +6,7 @@ import logo from "./img/DVRPC-logo.png";
 const logoSpot = document.querySelector("#mpo-logo");
 const img = document.createElement("img");
 img.src = logo;
+img.id = "dvrpc-logo";
 logoSpot.append(img);
 
 console.log("test123");
