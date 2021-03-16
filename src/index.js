@@ -1,6 +1,12 @@
 import "./css/main.css";
 import "mapbox-gl/dist/mapbox-gl.css";
 import "@mapbox/mapbox-gl-draw/dist/mapbox-gl-draw.css";
+import logo from "./img/DVRPC-logo.png";
+
+const logoSpot = document.querySelector("#mpo-logo");
+const img = document.createElement("img");
+img.src = logo;
+logoSpot.append(img);
 
 console.log("test123");
 
