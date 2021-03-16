@@ -78,7 +78,7 @@ module.exports = {
   // },
   devServer: {
     historyApiFallback: true,
-    contentBase: path.resolve(__dirname, "./dist"),
+    contentBase: path.resolve(__dirname, "./docs"),
     open: true,
     compress: true,
     hot: true,
