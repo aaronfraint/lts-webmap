@@ -7,7 +7,7 @@ module.exports = {
   mode: "production",
 
   entry: {
-    main: path.resolve(__dirname, "./webmap/index.js"),
+    main: path.resolve(__dirname, "./src/index.js"),
   },
 
   output: {
@@ -18,7 +18,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: "testing 213123123123",
-      template: path.resolve(__dirname, "./webmap/template.html"),
+      template: path.resolve(__dirname, "./src/template.html"),
       filename: "index.html",
     }),
     new CleanWebpackPlugin(),
