@@ -1,7 +1,57 @@
-import makeMap from "./map.js";
-import sources from "./mapSources.js";
-import { layers, paint_props } from "./mapLayers.js";
-import handleModal from "./modal.js";
+import "./css/main.css";
+import "mapbox-gl/dist/mapbox-gl.css";
+import "@mapbox/mapbox-gl-draw/dist/mapbox-gl-draw.css";
+import logo from "./img/DVRPC-logo.png";
+
+const logoSpot = document.querySelector("#mpo-logo");
+const img = document.createElement("img");
+img.src = logo;
+logoSpot.append(img);
+
+console.log("test123");
+
+// import Vue from "vue";
+// import mapboxgl from "mapbox-gl";
+// import MapboxDraw from "@mapbox/mapbox-gl-draw";
+
+// console.log("F yeah");
+
+// const heading = document.createElement("h1");
+// heading.textContent = "This is from index.js";
+
+// const app = document.querySelector("#root");
+// app.prepend(heading);
+
+// var vueapp = new Vue({
+//   el: "#vueapp",
+//   data: {
+//     message: "This comes from __VUE123456",
+//   },
+// });
+
+// vueapp.message = "this shit is dynamic";
+
+// mapboxgl.accessToken =
+//   "pk.eyJ1IjoibW1vbHRhIiwiYSI6ImNqZDBkMDZhYjJ6YzczNHJ4cno5eTcydnMifQ.RJNJ7s7hBfrJITOBZBdcOA";
+// var map = new mapboxgl.Map({
+//   container: "map", // container ID
+//   style: "mapbox://styles/mapbox/dark-v10", // style URL
+//   center: [-74.5, 40], // starting position [lng, lat]
+//   zoom: 9, // starting zoom
+// });
+// var Draw = new MapboxDraw({
+//   displayControlsDefault: false,
+//   controls: {
+//     polygon: true,
+//     trash: true,
+//   },
+// });
+// map.addControl(Draw, "top-right");
+
+import makeMap from "./js/map.js";
+import sources from "./js/mapSources.js";
+import { layers, paint_props } from "./js/mapLayers.js";
+import handleModal from "./js/modal.js";
 // add additional imports here (popups, forms, etc)
 
 const modal = document.getElementById("modal");
