@@ -2,52 +2,7 @@ import "./css/main.css";
 import "mapbox-gl/dist/mapbox-gl.css";
 import "@mapbox/mapbox-gl-draw/dist/mapbox-gl-draw.css";
 import logo from "./img/DVRPC-logo.png";
-
-const logoSpot = document.querySelector("#mpo-logo");
-const img = document.createElement("img");
-img.src = logo;
-img.id = "dvrpc-logo";
-logoSpot.append(img);
-
-console.log("test123");
-
-// import Vue from "vue";
-// import mapboxgl from "mapbox-gl";
-// import MapboxDraw from "@mapbox/mapbox-gl-draw";
-
-// console.log("F yeah");
-
-// const heading = document.createElement("h1");
-// heading.textContent = "This is from index.js";
-
-// const app = document.querySelector("#root");
-// app.prepend(heading);
-
-// var vueapp = new Vue({
-//   el: "#vueapp",
-//   data: {
-//     message: "This comes from __VUE123456",
-//   },
-// });
-
-// vueapp.message = "this shit is dynamic";
-
-// mapboxgl.accessToken =
-//   "pk.eyJ1IjoibW1vbHRhIiwiYSI6ImNqZDBkMDZhYjJ6YzczNHJ4cno5eTcydnMifQ.RJNJ7s7hBfrJITOBZBdcOA";
-// var map = new mapboxgl.Map({
-//   container: "map", // container ID
-//   style: "mapbox://styles/mapbox/dark-v10", // style URL
-//   center: [-74.5, 40], // starting position [lng, lat]
-//   zoom: 9, // starting zoom
-// });
-// var Draw = new MapboxDraw({
-//   displayControlsDefault: false,
-//   controls: {
-//     polygon: true,
-//     trash: true,
-//   },
-// });
-// map.addControl(Draw, "top-right");
+import favicon from "./img/favicon.ico";
 
 import makeMap from "./js/map.js";
 import sources from "./js/mapSources.js";
@@ -59,6 +14,16 @@ const modal = document.getElementById("modal");
 const modalToggle = document.getElementById("modal-toggle");
 const closeModal = document.getElementById("close-modal");
 // get additional elements here (forms, etc)
+
+// Add DVRPC logo to nav bar
+const logoSpot = document.querySelector("#mpo-logo");
+const img = document.createElement("img");
+img.src = logo;
+img.id = "dvrpc-logo";
+logoSpot.append(img);
+
+const faviconLink = document.querySelector("#favicon");
+faviconLink.href = favicon;
 
 // map
 const map = makeMap();
