@@ -15,7 +15,7 @@ Build with `npm run build`
 Webpack 5 was set up following an [excellent tutorial](https://www.taniarascia.com/how-to-use-webpack/) and a good amount of trial and error. The build command writes to the `/docs/` folder, which allows for hosting via GitHub Pages.
 
 ## To do
-- [ ] break development and production configurations apart
+- [X] break webpack configurations apart
 - [ ] troubleshoot `turf` installation via `npm` - this currently is loaded via CDN
 
 ## Libraries

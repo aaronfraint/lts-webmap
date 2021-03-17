@@ -8,7 +8,7 @@ const TerserPlugin = require("terser-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = {
-  mode: "production",
+  mode: "development",
 
   entry: {
     main: path.resolve(__dirname, "./src/index.js"),
@@ -24,14 +24,6 @@ module.exports = {
       title: "testing 213123123123",
       template: path.resolve(__dirname, "./src/template.html"),
       filename: "index.html",
-      minify: {
-        collapseWhitespace: true,
-        removeComments: true,
-        removeRedundantAttributes: true,
-        removeScriptTypeAttributes: false,
-        removeStyleLinkTypeAttributes: false,
-        useShortDoctype: true,
-      },
     }),
     new CleanWebpackPlugin(),
     new webpack.HotModuleReplacementPlugin(),
@@ -60,22 +52,13 @@ module.exports = {
         test: /\.vue$/,
         loader: "vue-loader",
       },
-      // {
-      //   test: /\.(jpg|png)$/,
-      //   use: {
-      //     loader: "url-loader",
-      //   },
-      // },
       {
         test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
         type: "asset/resource",
       },
     ],
   },
-  // optimization: {
-  //   minimize: true,
-  //   minimizer: [new CssMinimizerPlugin(), new TerserPlugin()],
-  // },
+
   devServer: {
     historyApiFallback: true,
     contentBase: path.resolve(__dirname, "./docs"),
